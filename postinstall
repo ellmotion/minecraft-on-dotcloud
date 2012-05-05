@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# Source the INSTALL_DIRECTORY variable
+[ -f ~/profile ] && . ~/profile
+
+touch $MINECRAFT_DIR/server.properties
+echo server-port=$PORT_MC >> $MINECRAFT_DIR/server.properties
+echo motd=$DOTCLOUD_PROJECT\'s Dotcloud >> $MINECRAFT_DIR/server.properties
+
+cat > ~/startmcserver <<EOF
+#!/bin/bash
+cd $MINECRAFT_DIR
+exec /usr/bin/java -Xmx500M -Xms500M -jar $MINECRAFT_DIR/minecraft_server.jar nogui
+EOF
+chmod +x ~/startmcserver
+
+cat > ~/run <<EOF
+#!/bin/bash
+if ps -aux | grep -v grep | grep java; then
+        echo "Error"
+else
+        exec /usr/bin/screen -AmdS MCServer ./startmcserver
+fi
+EOF
+chmod +x ~/run
+
+
+echo
+echo
+echo "########################################################"
+echo The address for Minecraft clients is : "$DOTCLOUD_MINECRAFT_MC_HOST":"$DOTCLOUD_MINECRAFT_MC_PORT" 
+echo "########################################################"
+echo
+echo
+echo The address for Minecraft clients is : "$DOTCLOUD_MINECRAFT_MC_HOST":"$DOTCLOUD_MINECRAFT_MC_PORT" >> $MINECRAFT_DIR/IPMCSERVER

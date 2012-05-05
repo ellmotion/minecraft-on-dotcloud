@@ -1,0 +1,5 @@
+minecraft:
+  type: custom
+  buildscript: minecraft/builder
+  ports:
+    MC: tcp

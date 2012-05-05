@@ -1,0 +1,18 @@
+#!/bin/bash
+
+MINECRAFT_DIR="$HOME/minecraftserver"
+PACKAGE="https://s3.amazonaws.com/MinecraftDownload/launcher/minecraft_server.jar?"
+
+cd
+
+if [ -d $MINECRAFT_DIR ]; then
+	echo "Minecraft Server is already setup"
+else
+	mkdir -p $MINECRAFT_DIR
+	wget "$PACKAGE"
+	mv minecraft_server.jar "$MINECRAFT_DIR"
+fi
+
+cat > ~/profile << EOF
+MINECRAFT_DIR="$MINECRAFT_DIR"
+EOF
