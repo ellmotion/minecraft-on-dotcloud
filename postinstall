@@ -10,7 +10,7 @@ echo motd=$DOTCLOUD_PROJECT\'s Dotcloud >> $MINECRAFT_DIR/server.properties
 cat > ~/startmcserver <<EOF
 #!/bin/bash
 cd $MINECRAFT_DIR
-exec /usr/bin/java -Xmx500M -Xms500M -jar $MINECRAFT_DIR/minecraft_server.jar nogui
+exec /usr/bin/java -Xmx64M -Xms500M -jar $MINECRAFT_DIR/minecraft_server.jar nogui
 EOF
 chmod +x ~/startmcserver
 
