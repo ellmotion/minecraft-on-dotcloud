@@ -36,5 +36,5 @@ Une fois le sheel démarré:
 
 	$screen -x MCServer
 
-Et pour quitter un screen ``CTRL + A`` puis ``CTRL + D``. Surtout ne JAMAIS faire un ``CTRL +D`` car ça arrêtera le processus de screen et donc inévitablement le serveur Minecraft.
+Et pour quitter un screen ``CTRL + A`` puis ``CTRL + D``. Surtout ne JAMAIS faire un ``CTRL + S`` car ça arrêtera le processus de screen et donc inévitablement le serveur Minecraft.
 
