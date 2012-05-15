@@ -1,7 +1,7 @@
 Minecraft Server On DotCloud
 ============================
 
-This is a port of the Minecraft game server for running on dotCloud. The server is vanilla, ie it has no plugins installed. Using these files you should be able to get the server is up and running instantly.
+This is a port of the Minecraft game server for running on dotCloud. The server is vanilla, it has no plugins installed. Using these files you should be able to get the server is up and running instantly.
 
 How Does it work ?
 -------------------
@@ -34,4 +34,4 @@ Once you are connected:
 
 	$screen -x MCServer
 
-And to exit a screen ``CTRL + A`` then ``CTRL + D`` . NEVER press ``CTRL + C`` because it will stop the process of screen and then unavoidably the Minecraft server.
+To exit a screen ``CTRL + A`` then ``CTRL + D`` . NEVER press ``CTRL + C`` because it will stop the process of screen and then unavoidably the Minecraft server.
