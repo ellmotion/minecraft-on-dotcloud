@@ -6,6 +6,7 @@
 touch $MINECRAFT_DIR/server.properties
 echo server-port=$PORT_MC >> $MINECRAFT_DIR/server.properties
 echo motd=$DOTCLOUD_PROJECT\'s Dotcloud >> $MINECRAFT_DIR/server.properties
+echo max-players=5 >> $MINECRAFT_DIR/server.properties #risk overload
 
 cat > ~/startmcserver <<EOF
 #!/bin/bash
